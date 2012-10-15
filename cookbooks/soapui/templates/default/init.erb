@@ -1,0 +1,5 @@
+#!/bin/bash
+
+<% @mock_files.each do |mock_file| -%>
+    <%= @soapui_home %>/bin/mockservicerunner.sh <%= @mock_home %>/<%= mock_file %>  > /dev/null 2>&1 &
+<% end -%>
