@@ -1,0 +1,16 @@
+#!/bin/sh
+
+export JAVA_HOME=/usr/java/default
+
+case "$1" in
+start)
+echo "Starting Kestrel"
+sudo -u kestrel sh /opt/kestrel/scripts/devel.sh > /dev/null 2>&1 &
+;;
+*)
+echo "Usage: /etc/init.d/kestrel {start}"
+exit 1
+;;
+esac
+
+exit 0
